@@ -2,7 +2,9 @@
 import { Injectable } from '@nestjs/common';
 import { ethers, providers,utils } from 'ethers';
 import * as contractJson from './assets/MyContract.json';
+import * as dotenv from "dotenv";
 import {ItemDTO } from './dtos/getItemList.dto';
+dotenv.config();
 
 const MP_CONTRACT_ADDRESS = "0xkj";
 
