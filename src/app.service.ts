@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
-import { ethers, providers,utils } from 'ethers';
+import { ethers } from 'ethers';
 import * as contractJson from './assets/MyContract.json';
 import * as dotenv from "dotenv";
 import {ItemDTO } from './dtos/getItemList.dto';
 dotenv.config();
 
-const MP_CONTRACT_ADDRESS = "0xkj";
+const MP_CONTRACT_ADDRESS = "0x6DF894Ce09c882cdf0cB5E9B0B970B4e87423BCB";
 
 @Injectable()
 export class AppService {
@@ -14,10 +14,10 @@ export class AppService {
   mpContract: ethers.Contract;
   provider: ethers.providers.Provider;
   constructor(){
-    this.provider = ethers.getDefaultProvider("sepolia");
+    this.provider = new ethers.providers.InfuraProvider('sepolia', process.env.INFURA_API_KEY);
     this.mpContract = new ethers.Contract(
     MP_CONTRACT_ADDRESS,
-    contractJson,
+    contractJson.abi,
     );
     console.log('construct success!')
   }

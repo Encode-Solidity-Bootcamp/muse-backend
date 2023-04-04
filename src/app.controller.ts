@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
+import {ItemDTO } from './dtos/getItemList.dto';
 
 
 
@@ -9,7 +10,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('itemList')
-  async getItemList(): Promise<string[]>{
+  async getItemList(): Promise<ItemDTO[]>{
     return this.appService.itemsList();
   }
 }
