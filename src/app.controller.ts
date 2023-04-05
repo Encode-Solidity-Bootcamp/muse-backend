@@ -13,4 +13,9 @@ export class AppController {
   async getItemList(): Promise<ItemDTO[]>{
     return this.appService.itemsList();
   }
+
+  @Get('getArtist')
+  async getArtistList(): Promise<any>{
+    return this.appService.artistList();
+  }
 }
