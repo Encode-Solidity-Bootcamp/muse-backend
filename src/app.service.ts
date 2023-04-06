@@ -8,7 +8,7 @@ import {ItemDTO } from './dtos/getItemList.dto';
 dotenv.config();
 
 const MP_CONTRACT_ADDRESS = "0x23D30d4C0bd879C94008D6F0d159Ca72835fCF00";
-const ARTIST_CONTRACT_ADDRESS = "0x09DB8F52868C03AfF1438d98Fea1889984A94932";
+const ARTIST_CONTRACT_ADDRESS = "0x1F0544BAF1C38A5b29F4D49F0aF5d16ac27dF67b";
 
 @Injectable()
 export class AppService {
